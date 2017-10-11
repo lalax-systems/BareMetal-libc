@@ -1,2 +1,4 @@
 # Default build directory for CMake
 /build
+/html
+/man
