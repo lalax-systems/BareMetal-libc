@@ -39,6 +39,12 @@ void *memcpy(void *dst,
 int strcmp(const char *a,
            const char *b);
 
+/// @brief Determines the length of a string.
+/// @param str A null-terminated string.
+/// @returns The length of the string, not
+/// including the null terminator.
+size_t strlen(const char *str);
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

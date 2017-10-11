@@ -7,10 +7,6 @@
 
 #include <string.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 void *memcpy(void *dst,
              const void *src,
              size_t count) {
@@ -33,6 +29,9 @@ int strcmp(const char *a,
 	return *au - *bu;
 }
 
-#ifdef __cplusplus
-} // extern "C"
-#endif
+size_t strlen(const char *str) {
+	size_t i = 0;
+	while (str[i] != 0)
+		i++;
+	return i;
+}
