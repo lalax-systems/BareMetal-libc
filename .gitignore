@@ -2,3 +2,12 @@
 /build
 /html
 /man
+# Common artifact extensions on Linux
+*.o
+*.a
+*.so
+# Common artifact extensions on Windows
+*.obj
+*.lib
+*.dll
+*.exe
