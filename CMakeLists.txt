@@ -15,13 +15,22 @@ if (DOXYGEN_FOUND AND DOXYGEN_DOT_FOUND)
 		COMMENT "Generating Doxygen API documentation")
 endif (DOXYGEN_FOUND AND DOXYGEN_DOT_FOUND)
 
+macro(ADD_HEADER VAR HEADER)
+	list (APPEND ${VAR} "${PROJECT_SOURCE_DIR}/include/${HEADER}")
+endmacro(ADD_HEADER VAR_HEADER)
+
+macro(ADD_SOURCE VAR SOURCE)
+	list (APPEND ${VAR} "${PROJECT_SOURCE_DIR}/src/${SOURCE}")
+endmacro(ADD_SOURCE VAR SOURCE)
+
 macro(ADD_HEADER_AND_SOURCE VAR HEADER SOURCE)
-	list (APPEND ${VAR}
-		"${PROJECT_SOURCE_DIR}/include/${HEADER}"
-		"${PROJECT_SOURCE_DIR}/src/${SOURCE}")
+	add_header(${VAR} ${HEADER})
+	add_source(${VAR} ${SOURCE})
 endmacro(ADD_HEADER_AND_SOURCE VAR HEADER SOURCE)
 
 unset (SOURCES)
+
+add_header(SOURCES "baremetal/types.h")
 
 add_header_and_source(SOURCES
 	"baremetal/baremetal.h"
