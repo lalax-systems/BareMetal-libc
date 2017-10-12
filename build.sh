@@ -25,6 +25,13 @@ function compile {
 	fi
 }
 
+function generate_limits {
+	$CC -Wall -Wextra -Werror -Wfatal-errors src/generate-limits.c -o src/generate-limits
+	src/generate-limits --output $1
+}
+
+generate_limits include/limits.h
+
 function link_static {
 	echo "AR $1"
 	if [ "$AR" == "ar" ]; then
