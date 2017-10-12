@@ -15,6 +15,12 @@ if (DOXYGEN_FOUND AND DOXYGEN_DOT_FOUND)
 		COMMENT "Generating Doxygen API documentation")
 endif (DOXYGEN_FOUND AND DOXYGEN_DOT_FOUND)
 
+add_executable("generate-limits" "src/generate-limits.c")
+
+add_custom_command(OUTPUT "${PROJECT_SOURCE_DIR}/include/limits.h"
+	COMMAND $<TARGET_FILE:generate-limits> --output "${PROJECT_SOURCE_DIR}/include/limits.h"
+	COMMENT "Generating limits.h")
+
 macro(ADD_HEADER VAR HEADER)
 	list (APPEND ${VAR} "${PROJECT_SOURCE_DIR}/include/${HEADER}")
 endmacro(ADD_HEADER VAR_HEADER)
@@ -31,6 +37,7 @@ endmacro(ADD_HEADER_AND_SOURCE VAR HEADER SOURCE)
 unset (SOURCES)
 
 add_header(SOURCES "baremetal/types.h")
+add_header(SOURCES "limits.h")
 
 add_header_and_source(SOURCES
 	"baremetal/baremetal.h"
