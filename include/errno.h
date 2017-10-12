@@ -10,22 +10,31 @@
 /// used by the standard library to describe
 /// failures.
 
+/// @defgroup baremetal-errno Error Codes
+/// @brief Standard error codes returned by
+/// library functions.
+
 #ifndef BAREMETAL_LIBC_ERRNO_H
 #define BAREMETAL_LIBC_ERRNO_H
 
 /// @brief Error allocating memory.
+/// @ingroup baremetal-errno
 #define ENOMEM 1
 
 /// @brief No such file or directory.
+/// @ingroup baremetal-errno
 #define ENOENT 2
 
 /// @brief File or directory already exists.
+/// @ingroup baremetal-errno
 #define EEXIST 3
 
 /// @brief Invalid argument.
+/// @ingroup barmetal-errno
 #define EINVAL 4
 
 /// @brief Input or output error.
+/// @ingroup baremetal-errno
 #define EIO 5
 
 #ifdef __cplusplus
@@ -34,6 +43,7 @@ extern "C" {
 
 /// @brief Used by standard library functions
 /// to describe why they failures.
+/// @ingroup baremetal-errno
 extern int errno;
 
 #ifdef __cplusplus
