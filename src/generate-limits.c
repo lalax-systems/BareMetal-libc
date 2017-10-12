@@ -67,7 +67,7 @@ static int generate_limits(FILE *output) {
 
 	fprintf(output, "#endif // BAREMETAL_LIBC_LIMITS_H\n");
 
-	return EXIT_FAILURE;
+	return EXIT_SUCCESS;
 }
 
 int main(int argc, const char **argv) {
@@ -100,6 +100,6 @@ int main(int argc, const char **argv) {
 	}
 
 	fclose(output);
-	return EXIT_FAILURE;
+	return EXIT_SUCCESS;
 }
 
