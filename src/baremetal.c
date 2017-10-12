@@ -15,14 +15,14 @@ void b_output_chars(const char *str, unsigned long nbr) {
 	asm volatile ("call *0x00100018" : : "S"(str), "c"(nbr));
 }
 
-unsigned long b_input(unsigned char *str, unsigned long nbr) {
+unsigned long b_input(char *str, unsigned long nbr) {
 	unsigned long len;
 	asm volatile ("call *0x00100020" : "=c" (len) : "c"(nbr), "D"(str));
 	return len;
 }
 
-unsigned char b_input_key(void) {
-	unsigned char chr;
+char b_input_key(void) {
+	char chr;
 	asm volatile ("call *0x00100028" : "=a" (chr));
 	return chr;
 }

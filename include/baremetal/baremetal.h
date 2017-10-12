@@ -13,8 +13,8 @@ void b_output(const char *str);
 void b_output_chars(const char *str, unsigned long nbr);
 
 // Input
-unsigned long b_input(unsigned char *str, unsigned long nbr);
-unsigned char b_input_key(void);
+unsigned long b_input(char *str, unsigned long nbr);
+char b_input_key(void);
 
 // SMP
 unsigned long b_smp_set(void *codeptr, void *dataptr, unsigned long cpu);
