@@ -10,6 +10,11 @@
 
 #include <baremetal/types.h>
 
+/** @brief Used to represent an invalid
+ * address.
+ * */
+#define NULL ((void *) 0)
+
 /** @brief Returned by main if an error
  * occured within the program.
  * */
