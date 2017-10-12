@@ -12,10 +12,10 @@
 #include <limits.h>
 
 #define WRITE_SFIELD(file, name, value) \
-	fprintf(file, "#define %s %lld\n\n", name, (long long int) value)
+	fprintf(file, "#define %s %lldLL\n\n", name, (long long int) value)
 
 #define WRITE_UFIELD(file, name, value) \
-	fprintf(file, "#define %s %llu\n\n", name, (unsigned long long int) value)
+	fprintf(file, "#define %s %lluULL\n\n", name, (unsigned long long int) value)
 
 static int generate_limits(FILE *output) {
 
